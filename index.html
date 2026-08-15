@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeFlock Roseville CA</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-cove:#070634;
+    --electric-rose:#DE1840;
+    --hot-coral:#FE0B3C;
+    --dusty-sky:#9DBADE;
+    --light-gray:#F0F0F0;
+    --black:#000000;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'TikTok Sans', sans-serif;
+    color:var(--deep-cove);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  .nav{
+    position:sticky;top:0;z-index:100;
+    background:var(--white);
+    border-bottom:1px solid var(--light-gray);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1140px;margin:0 auto;
+  }
+  .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:0.2px;}
+  .nav-logo img{width:32px;height:32px;object-fit:contain;flex-shrink:0;}
+  .nav-logo span.accent{color:var(--electric-rose);}
+  .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+  .nav-links a{font-weight:600;font-size:14px;color:var(--deep-cove);}
+  .nav-links a:hover{color:var(--electric-rose);}
+  .nav-cta{
+    border:1.5px solid var(--electric-rose);
+    color:var(--electric-rose);
+    background:var(--white);
+    padding:9px 18px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:13px;
+    white-space:nowrap;
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav-cta:hover{background:var(--electric-rose);color:var(--white);}
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;border:none;cursor:pointer;padding:6px;
+  }
+  .hamburger span{width:24px;height:2px;background:var(--deep-cove);display:block;transition:.2s;}
+
+  /* HERO */
+  .hero{background:var(--light-gray);padding:64px 0 56px;}
+  .hero-inner{
+    display:flex;align-items:center;gap:56px;max-width:1140px;margin:0 auto;padding:0 24px;
+  }
+  .hero-eye{
+    width:220px;
+    height:auto;
+    flex-shrink:0;
+    align-self:center;
+    object-fit:contain;
+  }
+  .hero-copy h1{
+    font-size:44px;line-height:1.12;font-weight:800;letter-spacing:-0.5px;margin-bottom:16px;
+  }
+  .hero-copy h1 .rose{color:var(--electric-rose);}
+  .hero-copy p{font-size:16px;line-height:1.6;color:var(--deep-cove);max-width:560px;margin-bottom:24px;}
+  .hero-copy p a{
+    color:var(--electric-rose);
+    font-weight:600;
+    text-decoration:none;
+    display:inline-block;
+    position:relative;
+    padding-bottom:8px; /* space for the custom underline */
+    transition:color .18s ease;
+  }
+
+  .hero-copy p a::after{
+    content:'';
+    position:absolute;
+    left:0;right:0;bottom:1px;
+    height:6px;
+    pointer-events:none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 6' preserveAspectRatio='none'><path d='M0 3 Q5 0 10 3 T40 3' stroke='%23DE1840' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: repeat-x;
+    background-size: auto 6px;
+    transform-origin:50% 50%;
+    transition:transform .18s ease;
+  }
+
+  .hero-copy p a:hover{
+    color:var(--deep-cove);
+  }
+
+  .hero-copy p a:hover::after{
+    animation: wiggle-underline .56s ease-in-out both;
+  }
+
+  @keyframes wiggle-underline{
+    0%{transform:translateY(0) rotate(0);} 
+    25%{transform:translateY(1px) rotate(-1.2deg);} 
+    50%{transform:translateY(0) rotate(1deg);} 
+    75%{transform:translateY(1px) rotate(-0.8deg);} 
+    100%{transform:translateY(0) rotate(0);} 
+  }
+  .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--electric-rose);color:var(--white);
+    padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;
+    border:1.5px solid var(--electric-rose);
+    transition:background .15s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--hot-coral);border-color:var(--hot-coral);}
+  .link-arrow{font-weight:700;font-size:14px;color:var(--deep-cove);}
+  .link-arrow:hover{color:var(--electric-rose);}
+
+  /* SECTION LABEL */
+  .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--deep-cove); opacity: 0.6; margin-bottom:8px;
+  }
+  .eyebrow b{color:var(--electric-rose); opacity: 0.6;}
+  section{padding:64px 0;}
+  .section-title{font-size:30px;font-weight:800;color:var(--electric-rose);margin-bottom:10px;letter-spacing:-0.3px;}
+  .section-sub{font-size:15px;color:var(--deep-cove);max-width:640px;line-height:1.6;}
+  .section-sub b{font-weight:700;}
+
+  /* EVENTS */
+  .events-visual{
+    position:relative;margin-top:32px;
+    display:flex;align-items:flex-start;
+  }
+  .events-visual .noflock{width:60%;border-radius:10px;overflow:hidden;}
+  .events-visual .flyer{
+    position:absolute;
+    width:42%;
+    right:40px;
+    top:140px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(7,6,52,0.25);
+  }
+
+  /* MAP */
+  .map-section{background:var(--dusty-sky);}
+  .map-section .section-title{color:var(--deep-cove);}
+  .map-frame{
+    margin-top:32px;background:var(--white);border-radius:14px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(7,6,52,0.15);
+  }
+  .map-placeholder{
+    height:420px;
+    display:flex;align-items:center;justify-content:center;
+    color:#8890a8;font-size:14px;font-weight:600;
+    background-color:#e9eef6;
+  }
+  .map-placeholder iframe{width:100%;height:100%;border:none;display:block;}
+  .map-caption{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;background:var(--deep-cove);color:var(--white);
+    font-size:13px;font-weight:600;
+  }
+  .map-caption span.small{opacity:.7;font-weight:400;display:block;font-size:11px;}
+
+  /* NEWS */
+  .news-grid{
+    margin-top:32px;
+    display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;
+  }
+  .news-tile{
+    display:flex;gap:20px;flex:1 1 460px;
+    padding:16px;border:1px solid var(--light-gray);border-radius:10px;
+    transition:box-shadow .15s ease;
+  }
+  .news-tile:hover{box-shadow:0 8px 24px rgba(7,6,52,0.1);}
+  .news-tile img{width:140px;height:100px;object-fit:cover;border-radius:6px;flex-shrink:0;}
+  .news-tile-body h3{font-size:17px;font-weight:800;color:var(--electric-rose);line-height:1.3;margin-bottom:8px;}
+  .news-tile:hover .news-tile-body h3{text-decoration:underline;}
+  .news-tile-body p{font-size:13px;color:#4b4a66;line-height:1.5;}
+  .news-side{flex:0 0 220px;display:flex;flex-direction:column;gap:14px;}
+  .news-side a{font-size:13px;font-weight:700;color:var(--deep-cove);border-bottom:1px solid var(--light-gray);padding-bottom:10px;}
+  .news-side a:hover{color:var(--electric-rose);}
+
+  /* CTA / GET THE FLOCK OUT */
+  .cta-section{
+    background:var(--electric-rose);color:var(--white);text-align:center;padding:72px 0;
+  }
+  .cta-section h2{font-size:34px;font-weight:800;margin-bottom:12px;}
+  .cta-section p{font-size:15px;opacity:.92;max-width:520px;margin:0 auto 28px;line-height:1.6;}
+  .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn-white{
+    background:var(--white);color:var(--hot-coral);
+    padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;
+  }
+  .btn-white:hover{background:var(--deep-cove);color:var(--white);}
+  .btn-outline-white{
+    border:1.5px solid var(--white);color:var(--white);
+    padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;
+  }
+  .btn-outline-white:hover{background:var(--white);color:var(--hot-coral);}
+
+  /* FOOTER */
+  footer{
+    background:var(--hot-coral);color:var(--deep-cove);
+    padding:20px 0;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;}
+  footer a{font-size:13px;font-weight:600;}
+  footer a:hover{color:var(--deep-cove);}
+
+  /* MOBILE */
+  @media (max-width: 860px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;bottom:0;
+      background:var(--white);
+      flex-direction:column;align-items:flex-start;gap:0;
+      padding:12px 24px 24px;
+      transform:translateY(-110%);
+      transition:transform .25s ease;
+      border-top:1px solid var(--light-gray);
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{width:100%;border-bottom:1px solid var(--light-gray);}
+    .nav-links a{display:block;padding:16px 0;}
+    .nav-cta{display:none;}
+    .nav-links .nav-cta-mobile{
+      display:block;text-align:center;background:var(--electric-rose);color:var(--white);
+      border-radius:6px;padding:14px 0;margin-top:16px;border:none;
+    }
+    .hamburger{display:flex;}
+
+    .hero-inner{flex-direction:column;text-align:left;gap:28px;}
+    .hero-eye{order:-1;width:130px;height:auto;align-self:flex-start;}
+    .hero-copy h1{font-size:30px;}
+
+    .events-visual{flex-direction:column;}
+    .events-visual .flyer{
+      position:relative;width:78%;top:auto;right:auto;order:-1;margin-bottom:-56px;margin-left:auto;margin-right:auto;z-index:2;
+    }
+    .events-visual .noflock{width:100%;margin-top:0;}
+
+    .news-grid{flex-direction:column;gap:20px;}
+    .news-tile{flex:1 1 auto;flex-direction:column;padding:12px;}
+    .news-tile img{width:100%;height:160px;}
+    .news-side{flex:none;flex-direction:row;flex-wrap:wrap;gap:16px 24px;}
+    .news-side a{padding-bottom:6px;}
+
+    section{padding:48px 0;}
+
+    footer .container{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.deflockroseville.com" class="nav-logo">
+      <img src="logo.png" alt="DeFlock Roseville logo">
+      DeFlock <span class="accent">Roseville Ca</span>
+    </a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#events">Events</a></li>
+      <li><a href="#camera-locations">Camera Locations</a></li>
+      <li><a href="#in-the-news">In the News</a></li>
+      <!--<li><a href="#get-the-flock-out">Take Action</a></li>
+      <li><a href="https://www.change.org/p/deflock-roseville-ca" class="nav-cta-mobile" target="_blank" rel="noopener">Sign the Petition</a></li>-->
+    </ul>
+    <a href="https://www.change.org/p/deflock-roseville-ca" class="nav-cta" target="_blank" rel="noopener">Sign the Petition</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img src="Rose_Eye.png" alt="" class="hero-eye">
+    <div class="hero-copy">
+      <h1>AI is deciding Roseville's freedom&hellip; <span class="rose">and it's terrible at it.</span></h1>
+      <p>Roseville is now famous for investing in Flock cameras, which&mdash;<a href="https://www.businessinsider.com/flock-camera-misread-license-plate-reader-california-roseville-police-2026-7" target="_blank" rel="noopener">Business Insider reported</a>&mdash;misread license plates in 71% of the alerts it sent to Roseville police.</p>
+      <div class="hero-actions">
+        <a href="#get-the-flock-out" class="btn-primary">Take Action</a>
+        <a href="#events" class="link-arrow">Learn More &darr;</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="events">
+  <div class="container">
+    <div class="eyebrow">Events // ALPR Week</div>
+    <h2 class="section-title">Join us in Roseville Town Square</h2>
+    <p class="section-sub">Connect, get resources, and learn actions you can take: <b>Saturday August 22nd, at Roseville Town Square, 311 Vernon St. 3PM &ndash; 5PM.</b></p>
+    <div class="events-visual">
+      <img src="No_Flock_lockup.png" alt="No Flock camera illustration" class="noflock">
+      <img src="Aug22Flyer.jpeg" alt="ALPR Awareness National Week of Action, Roseville Town Square, Saturday August 22nd, 3PM-5PM" class="flyer">
+    </div>
+  </div>
+</section>
+
+<section id="camera-locations" class="map-section">
+  <div class="container">
+    <div class="eyebrow">Camera Locations // From deflock.org</div>
+    <h2 class="section-title">Spot the Flock</h2>
+    <p class="section-sub">Community-reported ALPR camera locations. If you spot one that's missing, add it to the map.</p>
+    <div class="map-frame">
+      <div class="map-placeholder"><iframe src="https://maps.deflock.org/?lat=38.7521&lng=-121.2880&zoom=11.00" title="DeFlock camera map"></iframe></div>
+      <div class="map-caption">
+        DeFlock Maps
+        <span class="small">Live camera count updates from deflock.org</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="in-the-news">
+  <div class="container">
+    <div class="eyebrow">In the News</div>
+    <h2 class="section-title">What people are saying&hellip;</h2>
+    <div class="news-grid">
+      <a href="https://www.businessinsider.com/flock-camera-misread-license-plate-reader-california-roseville-police-2026-7" target="_blank" rel="noopener" class="news-tile">
+        <img src="BI_article_image.png" alt="Westfield Galleria at Roseville street sign">
+        <div class="news-tile-body">
+          <h3>In one California town, Flock misread license plates in 71% of the alerts it sent to police</h3>
+          <p>In the summer of 2024, a police officer in the Sacramento suburb of Roseville, California, called a man to discuss a persistent problem with his license plate.</p>
+        </div>
+      </a>
+      <div class="news-side">
+        <a href="https://deflockauburnca.com/resources" target="_blank" rel="noopener">More news and resources &rarr;</a>
+        <a href="https://www.instagram.com/deflockroseville/" target="_blank" rel="noopener">Or follow us on Instagram &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="get-the-flock-out" class="cta-section">
+  <div class="container">
+    <h2>Get the Flock Out.</h2>
+    <p>Attend a Board of Supervisors or City Council meeting. Talk to your neighbors. Share what you found here. Surveillance only works when people don't know it's happening.</p>
+    <div class="cta-actions">
+      <a href="https://www.change.org/p/deflock-roseville-ca" class="btn-white" target="_blank" rel="noopener">Sign the Petition</a>
+      <a href="mailto:DeflockRoseville@proton.me" class="btn-outline-white">Contact DeFlock Roseville</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="https://www.deflockroseville.com">DeFlock Roseville</a>
+    <a href="https://www.instagram.com/deflockroseville/" target="_blank" rel="noopener">Follow on Instagram: @DeFlockRoseville</a>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
