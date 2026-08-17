@@ -181,23 +181,46 @@
   }
   .map-caption span.small{opacity:.7;font-weight:400;display:block;font-size:11px;}
 
-  /* NEWS */
-  .news-grid{
+  /* NEWS CAROUSEL */
+  .news-carousel{
     margin-top:32px;
-    display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;
+    display:flex;align-items:center;gap:16px;
   }
+  .news-track-wrap{flex:1;min-width:0;overflow:hidden;}
+  .news-track{display:flex;transition:transform .35s cubic-bezier(.16,.8,.3,1);}
   .news-tile{
-    display:flex;gap:20px;flex:1 1 460px;
+    flex:0 0 100%;width:100%;box-sizing:border-box;
+    display:flex;gap:20px;
     padding:16px;border:1px solid var(--light-gray);border-radius:10px;
     transition:box-shadow .15s ease;
   }
   .news-tile:hover{box-shadow:0 8px 24px rgba(7,6,52,0.1);}
   .news-tile img{width:140px;height:100px;object-fit:cover;border-radius:6px;flex-shrink:0;}
+  .news-tile-img-placeholder{
+    width:140px;height:100px;border-radius:6px;flex-shrink:0;
+    background:var(--dusty-sky);color:var(--deep-cove);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;font-size:11px;font-weight:700;letter-spacing:.3px;padding:6px;
+  }
   .news-tile-body h3{font-size:17px;font-weight:800;color:var(--electric-rose);line-height:1.3;margin-bottom:8px;}
   .news-tile:hover .news-tile-body h3{text-decoration:underline;}
   .news-tile-body p{font-size:13px;color:#4b4a66;line-height:1.5;}
-  .news-side{flex:0 0 220px;display:flex;flex-direction:column;gap:14px;}
-  .news-side a{font-size:13px;font-weight:700;color:var(--deep-cove);border-bottom:1px solid var(--light-gray);padding-bottom:10px;}
+  .news-nav{
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--white);border:1px solid var(--light-gray);color:var(--deep-cove);
+    cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease;
+  }
+  .news-nav:hover{background:var(--electric-rose);border-color:var(--electric-rose);color:var(--white);}
+  .news-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+  .news-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--light-gray);
+    border:none;padding:0;cursor:pointer;transition:background .15s ease,transform .15s ease;
+  }
+  .news-dot.active{background:var(--electric-rose);transform:scale(1.2);}
+  .news-side{margin-top:20px;display:flex;flex-direction:column;gap:14px;}
+  .news-side a{font-size:13px;font-weight:700;color:var(--deep-cove);}
   .news-side a:hover{color:var(--electric-rose);}
 
   /* CTA / GET THE FLOCK OUT */
@@ -217,6 +240,43 @@
     padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;
   }
   .btn-outline-white:hover{background:var(--white);color:var(--hot-coral);}
+
+  /* SQUIGGLE DIVIDER + SOCIAL LINKS */
+  .squiggle-divider{
+    width:100%;
+    max-width:480px;
+    height:14px;
+    margin:44px auto 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14' preserveAspectRatio='none'><path d='M0 7 Q5 2 10 7 T20 7 T30 7 T40 7' stroke='%239DBADE' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: 40px 14px;
+    transform-origin:50% 50%;
+  }
+  .squiggle-divider.wiggle{
+    animation: wiggle-divider .9s ease-in-out both;
+  }
+  @keyframes wiggle-divider{
+    0%{transform:translateY(0) rotate(0);}
+    20%{transform:translateY(1.5px) rotate(-0.8deg);}
+    40%{transform:translateY(-1px) rotate(0.8deg);}
+    60%{transform:translateY(1px) rotate(-0.5deg);}
+    80%{transform:translateY(-0.5px) rotate(0.4deg);}
+    100%{transform:translateY(0) rotate(0);}
+  }
+  .connect-heading{
+    font-size:16px;font-weight:800;letter-spacing:.3px;
+    color:var(--white);margin-top:24px;margin-bottom:16px;
+  }
+  .social-links{
+    display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;
+  }
+  .social-links a{
+    font-size:14px;font-weight:700;color:var(--white);
+    padding-bottom:4px;border-bottom:1.5px solid rgba(255,255,255,.5);
+    transition:border-color .15s ease, opacity .15s ease;
+  }
+  .social-links a:hover{border-color:var(--white);opacity:.85;}
 
   /* FOOTER */
   footer{
@@ -259,11 +319,11 @@
     }
     .events-visual .noflock{width:100%;margin-top:0;}
 
-    .news-grid{flex-direction:column;gap:20px;}
-    .news-tile{flex:1 1 auto;flex-direction:column;padding:12px;}
-    .news-tile img{width:100%;height:160px;}
-    .news-side{flex:none;flex-direction:row;flex-wrap:wrap;gap:16px 24px;}
-    .news-side a{padding-bottom:6px;}
+    .news-carousel{gap:8px;}
+    .news-nav{width:32px;height:32px;}
+    .news-tile{flex-direction:column;padding:12px;}
+    .news-tile img,.news-tile-img-placeholder{width:100%;height:160px;}
+    .news-side{flex-direction:row;flex-wrap:wrap;gap:16px 24px;}
 
     section{padding:48px 0;}
 
@@ -286,8 +346,8 @@
       <li><a href="#events">Events</a></li>
       <li><a href="#camera-locations">Camera Locations</a></li>
       <li><a href="#in-the-news">In the News</a></li>
-      <!--<li><a href="#get-the-flock-out">Take Action</a></li>
-      <li><a href="https://www.change.org/p/deflock-roseville-ca" class="nav-cta-mobile" target="_blank" rel="noopener">Sign the Petition</a></li>-->
+      <li><a href="#get-the-flock-out">Get Involved</a></li>
+      <!--<li><a href="https://www.change.org/p/deflock-roseville-ca" class="nav-cta-mobile" target="_blank" rel="noopener">Sign the Petition</a></li>-->
     </ul>
     <a href="https://www.change.org/p/deflock-roseville-ca" class="nav-cta" target="_blank" rel="noopener">Sign the Petition</a>
   </div>
@@ -338,18 +398,43 @@
   <div class="container">
     <div class="eyebrow">In the News</div>
     <h2 class="section-title">What people are saying&hellip;</h2>
-    <div class="news-grid">
-      <a href="https://www.businessinsider.com/flock-camera-misread-license-plate-reader-california-roseville-police-2026-7" target="_blank" rel="noopener" class="news-tile">
-        <img src="BI_article_image.png" alt="Westfield Galleria at Roseville street sign">
-        <div class="news-tile-body">
-          <h3>In one California town, Flock misread license plates in 71% of the alerts it sent to police</h3>
-          <p>In the summer of 2024, a police officer in the Sacramento suburb of Roseville, California, called a man to discuss a persistent problem with his license plate.</p>
+
+    <div class="news-carousel">
+      <button type="button" class="news-nav news-prev" id="newsPrev" aria-label="Previous story">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L4 8L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="news-track-wrap">
+        <div class="news-track" id="newsTrack">
+
+          <a href="https://www.businessinsider.com/flock-camera-misread-license-plate-reader-california-roseville-police-2026-7" target="_blank" rel="noopener" class="news-tile">
+            <img src="BI_article_image.png" alt="Westfield Galleria at Roseville street sign">
+            <div class="news-tile-body">
+              <h3>In one California town, Flock misread license plates in 71% of the alerts it sent to police</h3>
+              <p>In the summer of 2024, a police officer in the Sacramento suburb of Roseville, California, called a man to discuss a persistent problem with his license plate....</p>
+            </div>
+          </a>
+
+          <a href="https://www.cbsnews.com/sacramento/news/grass-valley-police-indefinitely-suspend-flock-license-plate-cameras" target="_blank" rel="noopener" class="news-tile">
+            <img src="flockCam.jpg" alt="flock camera and solar panel on a pole">
+            <div class="news-tile-body">
+              <h3>Grass Valley police indefinitely suspend Flock license plate cameras</h3>
+              <p>Grass Valley PD announced it would indefinitely suspend its ALPR cameras following community pushback and a review that raised Fourth Amendment concerns &mdash; the decision was met with applause at the city council meeting...</p>
+            </div>
+          </a>
+
         </div>
-      </a>
-      <div class="news-side">
-        <a href="https://deflockauburnca.com/resources" target="_blank" rel="noopener">More news and resources &rarr;</a>
-        <a href="https://www.instagram.com/deflockroseville/" target="_blank" rel="noopener">Or follow us on Instagram &rarr;</a>
       </div>
+
+      <button type="button" class="news-nav news-next" id="newsNext" aria-label="Next story">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L12 8L6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="news-dots" id="newsDots"></div>
+
+    <div class="news-side">
+      <a href="https://deflockauburnca.com/resources" target="_blank" rel="noopener">More news and resources &rarr;</a>
     </div>
   </div>
 </section>
@@ -362,13 +447,23 @@
       <a href="https://www.change.org/p/deflock-roseville-ca" class="btn-white" target="_blank" rel="noopener">Sign the Petition</a>
       <a href="mailto:DeflockRoseville@proton.me" class="btn-outline-white">Contact DeFlock Roseville</a>
     </div>
+
+    <div class="squiggle-divider" id="squiggleDivider" aria-hidden="true"></div>
+
+    <h3 class="connect-heading">Connect with us</h3>
+    <div class="social-links">
+      <a href="https://www.instagram.com/deflockroseville?igsi=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@deflock.roseville" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.reddit.com/r/DeflockRoseville/s/OYuSw0ZUzp" target="_blank" rel="noopener">Reddit</a>
+      <a href="https://www.facebook.com/profile.php?id=61593009211326" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <a href="https://www.deflockroseville.com">DeFlock Roseville</a>
-    <a href="https://www.instagram.com/deflockroseville/" target="_blank" rel="noopener">Follow on Instagram: @DeFlockRoseville</a>
+    <a href="https://linktr.ee/deflockroseville" target="_blank" rel="noopener">All the things: linktr.ee/deflockroseville</a>
   </div>
 </footer>
 
@@ -381,6 +476,51 @@
   links.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => links.classList.remove('open'));
   });
+
+  // News carousel
+  const newsTrack = document.getElementById('newsTrack');
+  const newsPrev = document.getElementById('newsPrev');
+  const newsNext = document.getElementById('newsNext');
+  const newsDotsWrap = document.getElementById('newsDots');
+
+  if (newsTrack && newsPrev && newsNext && newsDotsWrap) {
+    const slides = Array.from(newsTrack.querySelectorAll('.news-tile'));
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'news-dot';
+      dot.setAttribute('aria-label', `Go to story ${i + 1} of ${slides.length}`);
+      dot.addEventListener('click', () => goTo(i));
+      newsDotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(newsDotsWrap.querySelectorAll('.news-dot'));
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      newsTrack.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    newsPrev.addEventListener('click', () => goTo(current - 1));
+    newsNext.addEventListener('click', () => goTo(current + 1));
+    goTo(0);
+  }
+
+  // Squiggle divider: wiggle once when it first scrolls into view
+  const squiggle = document.getElementById('squiggleDivider');
+  if (squiggle && 'IntersectionObserver' in window) {
+    const squiggleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('wiggle');
+          squiggleObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    squiggleObserver.observe(squiggle);
+  }
 </script>
 
 </body>
